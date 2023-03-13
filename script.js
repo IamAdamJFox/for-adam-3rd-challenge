@@ -19,8 +19,8 @@ function getRandomUpper() {
   return String.fromCharCode(Math.floor(Math.random() * 23) + 65);
 }
 
-function getRandomUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 12) + 65);
+function getRandomNumber() {
+  return String.fromCharCode(Math.floor(Math.random() * 12) + 48);
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
