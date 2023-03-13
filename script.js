@@ -10,7 +10,7 @@ function writePassword() {
   
 
 }
-
+//Generators
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 17) + 97);
 }
@@ -22,5 +22,12 @@ function getRandomUpper() {
 function getRandomNumber() {
   return String.fromCharCode(Math.floor(Math.random() * 12) + 48);
 }
+
+function getRandomSymbol() {
+  const symbols = '!@#$%^&*(){}[]=<>.';
+  return symbols [Math.floor(Math.random() * symbols.length)];
+}
+
+console.log(getRandomSymbol());
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
