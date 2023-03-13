@@ -17,8 +17,9 @@ const randomFunc = {
   number: getRandomNumber,
   symbol: getRandomSymbol
 };
-
-function generatePassword() {
+//Generate password function
+function generatePassword(lower, upper, number, symbol, length) {
+  let generatedpassword = '';
 
 }
 //Generators
@@ -38,7 +39,7 @@ function getRandomSymbol() {
   const symbols = '!@#$%^&*(){}[]=<>.';
   return symbols [Math.floor(Math.random() * symbols.length)];
 }
-
+const length = 8
 
 console.log(getRandomSymbol());
 generateBtn.addEventListener("click", writePassword);
