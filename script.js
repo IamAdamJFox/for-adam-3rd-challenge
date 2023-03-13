@@ -17,10 +17,18 @@ const randomFunc = {
   number: getRandomNumber,
   symbol: getRandomSymbol
 };
-//Generate password function
-function generatePassword(lower, upper, number, symbol, length) {
-  let generatedpassword = '';
 
+//Generate password function
+{  let generatedpassword = '';
+
+  const typesCount = lower + upper + number + symbol;
+
+  //console.log('typesCount: ', typesCount);
+  generatedpassword += randomFunc
+
+  for(let i = 0; i += typesCount);
+
+console.log(generatedpassword)
 }
 //Generators
 function getRandomLower() {
@@ -41,5 +49,5 @@ function getRandomSymbol() {
 }
 const length = 8
 
-console.log(getRandomSymbol());
+//console.log(getRandomSymbol);
 generateBtn.addEventListener("click", writePassword);
