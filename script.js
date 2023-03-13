@@ -10,6 +10,17 @@ function writePassword() {
   
 
 }
+
+const randomFunc = {
+  lower: getRandomLower,
+  upper: getRandomUpper,
+  number: getRandomNumber,
+  symbol: getRandomSymbol
+};
+
+function generatePassword() {
+
+}
 //Generators
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 17) + 97);
@@ -28,6 +39,6 @@ function getRandomSymbol() {
   return symbols [Math.floor(Math.random() * symbols.length)];
 }
 
+
 console.log(getRandomSymbol());
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
