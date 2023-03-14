@@ -25,7 +25,7 @@ function writePassword() {
 
 generateBtn.addEventListener("click", writePassword);
 
-
+// The main function
 function generatePassword() {
   var password = "";
  
@@ -75,7 +75,7 @@ function generatePassword() {
   }
   console.log (password)
   return password.substring(0, passwordLength);
-
+//Thank you Stephany Lopez
 }
 
 //Mario Inzunza was very helpful
