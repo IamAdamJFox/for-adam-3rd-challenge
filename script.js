@@ -16,8 +16,8 @@ function generatePassword () {
   pass += chars.substring(rand, rand +1)
 
 }
-  pass_el.innerText = pass;
+
 }
 
-//console.log(getRandomSymbol);
+
 generateBtn.addEventListener("click", generatePassword);
