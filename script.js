@@ -23,11 +23,11 @@ function generatePassword () {
   pass += chars.substring(rand, rand +1)
   }
   console.log(pass);
-
+ //IT WAS THE RETURN
   return (pass)
 }
 
 
 
-
+//CHANGED generatepassword to write password
 generateBtn.addEventListener("click", writePassword);
