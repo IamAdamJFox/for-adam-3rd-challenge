@@ -10,21 +10,44 @@ function writePassword() {
 
 }
 
-//Constants
-const length = 8;
-const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuwyx0123456789!@#$%^&*()[]{}=+<>";
-//Generator function
-function generatePassword () {
-  let pass = "";
-  for (var i = 0; i <= length; i++) {
-    let rand = Math.floor(Math.random() * chars.length
-    );
-  
-  pass += chars.substring(rand, rand +1)
+var generateBtn = document.querySelector("#generate");
+const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const numeric = "0123456789";
+const symbol = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
+function generatePassword() {
+  var password = "";
+ 
+  const passwordLength = prompt("How long would you like your password?")
+
+  var askLowerCase = confirm("Do you want lowercase characters?");
+  var askUpperCase = confirm("Do you want uppercase characters?");
+  var askNumeric = confirm("Do you want numeric characters?");
+  var askSymbol = confirm("Do you want symbol characters?");
+
+
+  if (askLowerCase) {
+    const randomIndex = Math.floor(Math.random() * lowerCase.length);
+    password += lowerCase[randomIndex];
   }
-  console.log(pass);
- //IT WAS THE RETURN
-  return (pass)
+  if (askUpperCase) {
+    const randomIndex = Math.floor(Math.random() * upperCase.length);
+    password += upperCase[randomIndex];
+  }
+  if (askNumber) {
+    const randomIndex = Math.floor(Math.random() * numeric.length);
+    password += numeric[randomIndex];
+  }
+  if (askSpecial) {
+    const randomIndex = Math.floor(Math.random() * symbol.length);
+    password += symbol[randomIndex];
+  }
 }
 
 
