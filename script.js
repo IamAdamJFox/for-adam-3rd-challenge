@@ -13,7 +13,7 @@ function writePassword() {
 var generateBtn = document.querySelector("#generate");
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-const numeric = "0123456789";
+const number = "0123456789";
 const symbol = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 // Write password to the #password input
 function writePassword() {
@@ -21,6 +21,10 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+
+generateBtn.addEventListener("click", writePassword);
+
+
 function generatePassword() {
   var password = "";
  
@@ -28,7 +32,7 @@ function generatePassword() {
 
   var askLowerCase = confirm("Do you want lowercase characters?");
   var askUpperCase = confirm("Do you want uppercase characters?");
-  var askNumeric = confirm("Do you want numeric characters?");
+  var askNumber = confirm("Do you want numeric characters?");
   var askSymbol = confirm("Do you want symbol characters?");
 
 
@@ -41,16 +45,40 @@ function generatePassword() {
     password += upperCase[randomIndex];
   }
   if (askNumber) {
-    const randomIndex = Math.floor(Math.random() * numeric.length);
-    password += numeric[randomIndex];
+    const randomIndex = Math.floor(Math.random() * number.length);
+    password += number[randomIndex];
   }
-  if (askSpecial) {
+  if (askSymbol) {
     const randomIndex = Math.floor(Math.random() * symbol.length);
     password += symbol[randomIndex];
   }
+  for (let i = 0; i < passwordLength; i++) {
+    if (askLowerCase) {
+      const randomIndex = Math.floor(Math.random() * lowerCase.length);
+      password += lowerCase[randomIndex];
+    }
+    if (askUpperCase) {
+      const randomIndex = Math.floor(Math.random() * upperCase.length);
+      password += upperCase[randomIndex];
+    }
+    if (askNumber) {
+      const randomIndex = Math.floor(Math.random() * number.length);
+      password += number[randomIndex];
+    }
+    if (askSymbol) {
+      const randomIndex = Math.floor(Math.random() * symbol.length);
+      password += symbol[randomIndex];
+    }
+  }
+  return password;
 }
 
+//Mario Inzunza was very helpful
 
 
-//CHANGED generatepassword to write password
-generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
