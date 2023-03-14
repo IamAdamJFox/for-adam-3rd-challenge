@@ -11,6 +11,16 @@ function writePassword() {
 
 }
 
+const length = 8;
+const char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuwyx0123456789!@#$%^&*()[]{}=+<>";
+
+function generatePassword () {
+  let pass = ""
+  for (var i = o; i <= length; i++) {
+    
+  }
+}
+
 
 
 //console.log(getRandomSymbol);
