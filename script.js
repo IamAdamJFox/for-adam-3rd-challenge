@@ -6,8 +6,8 @@ const specialSet = '?!@#$%&*';
 
 // Function to verify if the input is a valid number between 8 and 128
 function isValidPasswordLength(str) {
-  const parsedValue = parseInt(str, 10);
-  return !isNaN(parsedValue) && parsedValue >= 8 && parsedValue <= 128;
+  const numValue = +str; // Convert to a number using the unary plus operator
+  return Number.isInteger(numValue) && numValue >= 8 && numValue <= 128;
 }
 
 // Function to get a random character from a given string
@@ -30,6 +30,9 @@ function generatePassword() {
   do {
     passwordLength = prompt("Please enter a number value between 8 and 128 for the length of your password.");
   } while (!isValidPasswordLength(passwordLength));
+
+  // Convert password length to an integer
+  const intPasswordLength = +passwordLength;
 
   // Confirmation of desired character types
   const upperCase = confirm("Click 'OK' to include uppercase letters.");
@@ -57,7 +60,7 @@ function generatePassword() {
   password += getRandomCharacter(specialSet);
 
   // Generate the remaining password characters randomly from the passSet
-  while (password.length < passwordLength) {
+  while (password.length < intPasswordLength) {
     password += getRandomCharacter(passSet);
   }
 
@@ -71,8 +74,6 @@ generateBtn.addEventListener("click", function() {
   const passwordText = document.querySelector("#password");
   passwordText.value = password;
 });
-
-
 
 
 
